@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS += [
     'corsheaders',
+    'djongo',
 ]
 
 INSTALLED_APPS += [
