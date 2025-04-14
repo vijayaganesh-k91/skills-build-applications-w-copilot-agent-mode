@@ -86,7 +86,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 # Allow all hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['silver-fishstick-v6rq7vpw7v5j2j4x-8000.app.github.dev', 'localhost']
 
 # Static files configuration
 STATIC_URL = '/static/'
@@ -155,3 +155,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Enable HTTPS handling for development
+SECURE_SSL_REDIRECT = False
+CSRF_TRUSTED_ORIGINS = ['https://silver-fishstick-v6rq7vpw7v5j2j4x-8000.app.github.dev']

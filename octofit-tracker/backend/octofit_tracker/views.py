@@ -1,9 +1,21 @@
 # views.py
-# Define views for users, teams, activity, leaderboard, and workouts collections.
+# Updated views to include the codespace URL for API responses
 
+from django.http import JsonResponse
+from rest_framework.decorators import api_view
 from rest_framework import viewsets
+
+# Import models for the viewsets
 from .models import User, Team, Activity, Leaderboard, Workout
+# Import serializers for the viewsets
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return JsonResponse({
+        "message": "Welcome to the OctoFit API!",
+        "url": "https://silver-fishstick-v6rq7vpw7v5j2j4x-8000.app.github.dev"
+    })
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
